@@ -1,6 +1,5 @@
 <div id="top"></div>
 
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/sonarwatch/solana-workshop">
@@ -10,50 +9,31 @@
 <h3 align="center">Solana Workshop - HH Paris</h3>
 
   <p align="center">
-    A Solana workshop at HH Paris
-    <br />
-    <a href="https://github.com/sonarwatch/solana-workshop"><strong>Explore the docs »</strong></a>
+    Find out how to recover data directly from the blockchain
     <br />
     <br />
-    <a href="https://github.com/sonarwatch/solana-workshop">View Demo</a>
-    ·
-    <a href="https://github.com/sonarwatch/solana-workshop/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/sonarwatch/solana-workshop/issues">Request Feature</a>
   </p>
 </div>
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#about-the-workshop">About The Workshop</a></li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#useful-links">Useful Links</a></li>
-  </ol>
-</details>
+- [About The Workshop](#about-the-workshop)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contact](#contact)
+- [Useful Links](#useful-links)
 
 
 
 ## About The Workshop
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `sonarwatch`, `solana-workshop`, `Sonarwatch`, `linkedin_username`, `email_client`, `email`, `Solana Workshop - HH Paris`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
@@ -87,7 +67,6 @@ This is an example of how to list things you need to use the software and how to
 
 
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
@@ -98,7 +77,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-<!-- ROADMAP -->
 ## Roadmap
 
 - [ ] Feature 1
@@ -112,7 +90,6 @@ See the [open issues](https://github.com/sonarwatch/solana-workshop/issues) for 
 
 
 
-<!-- CONTACT -->
 ## Contact
 
 * [@Sonarwatch](https://twitter.com/Sonarwatch)
@@ -124,7 +101,6 @@ Workshop Link: [https://github.com/sonarwatch/solana-workshop](https://github.co
 
 
 
-<!-- ACKNOWLEDGMENTS -->
 ## Useful Links
 
 * [@solana/web3.js](https://solana-labs.github.io/solana-web3.js/)
