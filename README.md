@@ -9,7 +9,7 @@
 <h3 align="center">Solana Workshop - HH Paris</h3>
 
   <p align="center">
-    Find out how to recover data directly from the blockchain
+    How to recover data directly from the blockchain
     <br />
     <br />
   </p>
