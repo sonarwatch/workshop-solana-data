@@ -6,7 +6,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Solana Workshop - HH Paris</h3>
+<h3 align="center">A Solana Workshop - HH Paris</h3>
 
   <p align="center">
     How to recover data directly from the blockchain
@@ -30,7 +30,7 @@
 
 ## About The Workshop
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
