@@ -23,7 +23,7 @@
   - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
-- [Practice](#practice)
+- [Practice Time](#practice-time)
 - [Contact](#contact)
 - [Useful Links](#useful-links)
 
@@ -89,7 +89,7 @@ See the [open issues](https://github.com/sonarwatch/solana-workshop/issues) for 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Practice
+## Practice Time
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
