@@ -22,7 +22,8 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [Roadmap](#roadmap)
+- [Examples](#examples)
+- [Practice](#practice)
 - [Contact](#contact)
 - [Useful Links](#useful-links)
 
@@ -77,7 +78,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
-## Roadmap
+## Examples
 
 - [ ] Feature 1
 - [ ] Feature 2
@@ -88,7 +89,11 @@ See the [open issues](https://github.com/sonarwatch/solana-workshop/issues) for 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Practice
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contact
 
