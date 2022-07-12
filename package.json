@@ -1,5 +1,5 @@
 {
-  "name": "a_solana_workshop_hh_paris",
+  "name": "solana_workshop",
   "version": "0.0.0",
   "main": "./dist/tsc/main.js",
   "types": "./dist/tsc/main.d.ts",
