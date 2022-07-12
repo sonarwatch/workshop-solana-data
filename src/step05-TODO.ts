@@ -17,9 +17,19 @@ async function getProgramAccounts() {
       }
     }
   ]
-  const accounts = await connection.getProgramAccounts(tokenProgramId, {filters})
+  const tokenAccounts = await connection.getProgramAccounts(tokenProgramId, {filters})
 
-  // TODO decode accounts
+  // TODO: Decode tokenAccounts
+
+  // TODO: Get all mints accounts from you token accounts
+
+  // TODO: Decode mints accounts
+
+  // TODO: Get mints decimals
+
+  // TODO: Divide token accounts amounts by 10 ** mintDecimal
+
+  // TODO: Display all your token amounts !
 }
 
 getProgramAccounts()
