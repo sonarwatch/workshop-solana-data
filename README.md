@@ -16,7 +16,6 @@
 </div>
 
 
-
 - [About The Workshop](#about-the-workshop)
 - [How does it work?](#how-does-it-work)
 - [Practice Time](#practice-time)
@@ -36,9 +35,7 @@
 
 ## About The Workshop
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+The goal of this workshop is to discover through some examples how the data on the Solana blockchain works and how to recover this data
 
 ## How does it work?
 
@@ -66,22 +63,28 @@ yarn dev # runs main.ts file
 ```
 
 ### Step 01
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
+In this step we get the account info of the USDC token. For this we use `connection.getAccountInfo`. We obtain some data as a Buffer that we will decode in the next step.
 
 ### Step 02
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+In this step we decode the USDC token data. For that we decode the buffer thanks to the `MintAccountStruct`. `MintAccountStruct` is based on the [Metaplex Beet](https://github.com/metaplex-foundation/beet) library.
 
 ### Step 03
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+In this step, we get the account info a USDC token account. For this, we use `connection.getAccountInfo`. We obtain some data as a Buffer that we will decode in the next step.
 
 ### Step 04
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+In this step we decode the USDC token data. For that we decode the buffer thanks to the `TokenAccountStruct`. `TokenAccountStruct` is based on the [Metaplex Beet](https://github.com/metaplex-foundation/beet) library.
 
 ### Step 05 - TODO
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+In this step, the goal is to display the amount of each token that a wallet has.
+For this there are several steps:
+1. Get all tokens accounts of a wallet, then decode them with `connection.getProgramAccounts`, then decode them with `TokenAccountStruct`.
+2. Get all the mints and get the accounts info with `getMultipleAccountsInfo`, then decode mints accounts with `MintAccountStruct`
+3. Divided step 1 amounts by step 2 decimals
+4. Display tokens amounts in the console
+5. Display mints as symbols thanks to [Solana token list](https://cdn.jsdelivr.net/gh/solana-labs/token-list@main/src/tokens/solana.tokenlist.json)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 ## Go further
 
@@ -126,6 +129,7 @@ You can try to decode your StakeAccount to find out how many $JET you have stake
 * [Serialization Cookbook](https://solanacookbook.com/guides/serialization.html#how-to-deserialize-account-data-on-the-client)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 ## Contact
 
