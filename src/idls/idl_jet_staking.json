@@ -1,0 +1,1109 @@
+{
+    "version": "1.0.0",
+    "name": "jet_staking",
+    "constants": [
+        {
+            "name": "COLLATERAL_MINT",
+            "type": {
+                "defined": "&[u8]"
+            },
+            "value": "b\"collateral-mint\""
+        },
+        {
+            "name": "MAX_VOTE_WEIGHT_RECORD",
+            "type": {
+                "defined": "&[u8]"
+            },
+            "value": "b\"max-vote-weight-record\""
+        },
+        {
+            "name": "VAULT",
+            "type": {
+                "defined": "&[u8]"
+            },
+            "value": "b\"vault\""
+        },
+        {
+            "name": "VOTER_WEIGHT_RECORD",
+            "type": {
+                "defined": "&[u8]"
+            },
+            "value": "b\"voter-weight-record\""
+        }
+    ],
+    "instructions": [
+        {
+            "name": "initPool",
+            "accounts": [
+                {
+                    "name": "payer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "authority",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenMint",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePool",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "maxVoterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakeCollateralMint",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePoolVault",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "rent",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "seed",
+                    "type": "string"
+                },
+                {
+                    "name": "config",
+                    "type": {
+                        "defined": "PoolConfig"
+                    }
+                }
+            ],
+            "returns": null
+        },
+        {
+            "name": "initStakeAccount",
+            "accounts": [
+                {
+                    "name": "owner",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "auth",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePool",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "voterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "payer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [],
+            "returns": null
+        },
+        {
+            "name": "addStake",
+            "accounts": [
+                {
+                    "name": "stakePool",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePoolVault",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "voterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "maxVoterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "payer",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "payerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "amount",
+                    "type": {
+                        "option": "u64"
+                    }
+                }
+            ],
+            "returns": null
+        },
+        {
+            "name": "unbondStake",
+            "accounts": [
+                {
+                    "name": "owner",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "payer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "stakeAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePool",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePoolVault",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "unbondingAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "voterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "maxVoterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenOwnerRecord",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "seed",
+                    "type": "u32"
+                },
+                {
+                    "name": "amount",
+                    "type": {
+                        "option": "u64"
+                    }
+                }
+            ],
+            "returns": null
+        },
+        {
+            "name": "cancelUnbond",
+            "accounts": [
+                {
+                    "name": "owner",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "receiver",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "voterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "maxVoterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePool",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePoolVault",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "unbondingAccount",
+                    "isMut": true,
+                    "isSigner": false
+                }
+            ],
+            "args": [],
+            "returns": null
+        },
+        {
+            "name": "withdrawUnbonded",
+            "accounts": [
+                {
+                    "name": "owner",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "closer",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenReceiver",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePool",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePoolVault",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "unbondingAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [],
+            "returns": null
+        },
+        {
+            "name": "withdrawBonded",
+            "accounts": [
+                {
+                    "name": "authority",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "stakePool",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenReceiver",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakePoolVault",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "amount",
+                    "type": "u64"
+                }
+            ],
+            "returns": null
+        },
+        {
+            "name": "closeStakeAccount",
+            "accounts": [
+                {
+                    "name": "owner",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "closer",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "voterWeightRecord",
+                    "isMut": true,
+                    "isSigner": false
+                }
+            ],
+            "args": [],
+            "returns": null
+        }
+    ],
+    "accounts": [
+        {
+            "name": "VoterWeightRecord",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "realm",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "governingTokenMint",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "owner",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "voterWeight",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "voterWeightExpiry",
+                        "type": {
+                            "option": "u64"
+                        }
+                    },
+                    {
+                        "name": "weightAction",
+                        "type": {
+                            "option": {
+                                "defined": "VoterWeightAction"
+                            }
+                        }
+                    },
+                    {
+                        "name": "weightActionTarget",
+                        "type": {
+                            "option": "publicKey"
+                        }
+                    },
+                    {
+                        "name": "reserved",
+                        "type": {
+                            "array": [
+                                "u8",
+                                8
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "MaxVoterWeightRecord",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "realm",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "governingTokenMint",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "maxVoterWeight",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "maxVoterWeightExpiry",
+                        "type": {
+                            "option": "u64"
+                        }
+                    },
+                    {
+                        "name": "reserved",
+                        "type": {
+                            "array": [
+                                "u8",
+                                8
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "StakePool",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "seed",
+                        "type": {
+                            "array": [
+                                "u8",
+                                30
+                            ]
+                        }
+                    },
+                    {
+                        "name": "seedLen",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "bumpSeed",
+                        "type": {
+                            "array": [
+                                "u8",
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "name": "tokenMint",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "stakePoolVault",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "maxVoterWeightRecord",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "governanceRealm",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "stakeCollateralMint",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "unbondPeriod",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "vaultAmount",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "bonded",
+                        "type": {
+                            "defined": "SharedTokenPool"
+                        }
+                    },
+                    {
+                        "name": "unbonding",
+                        "type": {
+                            "defined": "SharedTokenPool"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "StakeAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "owner",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "stakePool",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "voterWeightRecord",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "bondedShares",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "unbondingShares",
+                        "type": "u64"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "UnbondingAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "stakeAccount",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "shares",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "unbondedAt",
+                        "type": "i64"
+                    }
+                ]
+            }
+        }
+    ],
+    "types": [
+        {
+            "name": "StakePoolNote",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "vaultAmount",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "bonded",
+                        "type": {
+                            "defined": "SharedTokenPool"
+                        }
+                    },
+                    {
+                        "name": "unbonding",
+                        "type": {
+                            "defined": "SharedTokenPool"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "StakeAccountNote",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "bondedShares",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "unbondingShares",
+                        "type": "u64"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "PoolConfig",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "unbondPeriod",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "governanceRealm",
+                        "type": "publicKey"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "SharedTokenPool",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "tokens",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "shares",
+                        "type": "u64"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "FullAmount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "tokenAmount",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "shareAmount",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "allShares",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "allTokens",
+                        "type": "u64"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "VoterWeightAction",
+            "type": {
+                "kind": "enum",
+                "variants": [
+                    {
+                        "name": "CastVote"
+                    },
+                    {
+                        "name": "CommentProposal"
+                    },
+                    {
+                        "name": "CreateGovernance"
+                    },
+                    {
+                        "name": "CreateProposal"
+                    },
+                    {
+                        "name": "SignOffProposal"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Rounding",
+            "type": {
+                "kind": "enum",
+                "variants": [
+                    {
+                        "name": "Up"
+                    },
+                    {
+                        "name": "Down"
+                    }
+                ]
+            }
+        }
+    ],
+    "events": [
+        {
+            "name": "StakePoolCreated",
+            "fields": [
+                {
+                    "name": "stakePool",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "authority",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "seed",
+                    "type": "string",
+                    "index": false
+                },
+                {
+                    "name": "tokenMint",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "config",
+                    "type": {
+                        "defined": "PoolConfig"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "maxVoterWeight",
+                    "type": "u64",
+                    "index": false
+                }
+            ]
+        },
+        {
+            "name": "StakeAccountCreated",
+            "fields": [
+                {
+                    "name": "stakePool",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "owner",
+                    "type": "publicKey",
+                    "index": false
+                }
+            ]
+        },
+        {
+            "name": "StakeAdded",
+            "fields": [
+                {
+                    "name": "stakePool",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "owner",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "depositor",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "stakedAmount",
+                    "type": {
+                        "defined": "FullAmount"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "poolNote",
+                    "type": {
+                        "defined": "StakePoolNote"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "accountNote",
+                    "type": {
+                        "defined": "StakeAccountNote"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "voterWeight",
+                    "type": "u64",
+                    "index": false
+                },
+                {
+                    "name": "maxVoterWeight",
+                    "type": "u64",
+                    "index": false
+                }
+            ]
+        },
+        {
+            "name": "StakeUnbonded",
+            "fields": [
+                {
+                    "name": "stakePool",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "unbondingAccount",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "owner",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "unbondedAmount",
+                    "type": {
+                        "defined": "FullAmount"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "unbondedAt",
+                    "type": "i64",
+                    "index": false
+                },
+                {
+                    "name": "poolNote",
+                    "type": {
+                        "defined": "StakePoolNote"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "accountNote",
+                    "type": {
+                        "defined": "StakeAccountNote"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "voterWeight",
+                    "type": "u64",
+                    "index": false
+                },
+                {
+                    "name": "maxVoterWeight",
+                    "type": "u64",
+                    "index": false
+                }
+            ]
+        },
+        {
+            "name": "UnbondCancelled",
+            "fields": [
+                {
+                    "name": "stakePool",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "unbondingAccount",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "owner",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "cancelledAmount",
+                    "type": {
+                        "defined": "FullAmount"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "poolNote",
+                    "type": {
+                        "defined": "StakePoolNote"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "accountNote",
+                    "type": {
+                        "defined": "StakeAccountNote"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "voterWeight",
+                    "type": "u64",
+                    "index": false
+                },
+                {
+                    "name": "maxVoterWeight",
+                    "type": "u64",
+                    "index": false
+                }
+            ]
+        },
+        {
+            "name": "UnbondedWithdrawn",
+            "fields": [
+                {
+                    "name": "stakePool",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "stakeAccount",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "owner",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "withdrawnAmount",
+                    "type": {
+                        "defined": "FullAmount"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "poolNote",
+                    "type": {
+                        "defined": "StakePoolNote"
+                    },
+                    "index": false
+                },
+                {
+                    "name": "accountNote",
+                    "type": {
+                        "defined": "StakeAccountNote"
+                    },
+                    "index": false
+                }
+            ]
+        },
+        {
+            "name": "BondedWithdrawn",
+            "fields": [
+                {
+                    "name": "stakePool",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "withdrawnAmount",
+                    "type": "u64",
+                    "index": false
+                },
+                {
+                    "name": "poolNote",
+                    "type": {
+                        "defined": "StakePoolNote"
+                    },
+                    "index": false
+                }
+            ]
+        },
+        {
+            "name": "StakeAccountClosed",
+            "fields": [
+                {
+                    "name": "stakeAccount",
+                    "type": "publicKey",
+                    "index": false
+                },
+                {
+                    "name": "owner",
+                    "type": "publicKey",
+                    "index": false
+                }
+            ]
+        }
+    ],
+    "errors": [
+        {
+            "code": 13100,
+            "name": "InsufficientStake"
+        },
+        {
+            "code": 13101,
+            "name": "InvalidTokenOwnerRecord"
+        },
+        {
+            "code": 13102,
+            "name": "OutstandingVotes"
+        },
+        {
+            "code": 13103,
+            "name": "NotYetUnbonded"
+        },
+        {
+            "code": 13104,
+            "name": "StakeRemaining"
+        },
+        {
+            "code": 13105,
+            "name": "InvalidAmount"
+        }
+    ]
+}
