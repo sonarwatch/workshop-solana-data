@@ -26,6 +26,7 @@
   - [Step 04](#step-04)
   - [Step 05 - TODO](#step-05---todo)
 - [Go further](#go-further)
+  - [Solana Staking (StakeAccount)](#solana-staking-stakeaccount)
   - [Marinade Finance (TicketAccountData)](#marinade-finance-ticketaccountdata)
   - [Jet Staking (StakeAccount)](#jet-staking-stakeaccount)
 - [Useful Links](#useful-links)
@@ -89,6 +90,10 @@ For this there are several steps:
 ## Go further
 
 You can go further and try to decode other accounts. Here are two examples you can start with:
+
+### Solana Staking ([StakeAccount](https://www.apr.dev/program/JPLockxtkngHkaQT5AuRYow3HyUv5qWzmhwsCPd653n?tab=IDL&idl=Accounts))
+
+You can recover your staking accounts.
 
 ### Marinade Finance ([TicketAccountData](https://www.apr.dev/program/MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD?tab=IDL&idl=Accounts))
 
