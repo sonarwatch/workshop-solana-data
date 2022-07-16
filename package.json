@@ -25,6 +25,7 @@
   "dependencies": {
     "@metaplex-foundation/beet": "^0.4.0",
     "@metaplex-foundation/beet-solana": "^0.3.0",
+    "@solana/spl-token-registry": "^0.2.4574",
     "@solana/web3.js": "^1.47.3",
     "bn.js": "^5.2.1"
   }

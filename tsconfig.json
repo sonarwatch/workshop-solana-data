@@ -4,8 +4,6 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "declaration": true,
-    "strict": true,
-    "noImplicitAny": true /* Raise error on expressions and declarations with an implied 'any' type. */,
     "strictNullChecks": true /* Enable strict null checks. */,
     "strictFunctionTypes": true /* Enable strict checking of function types. */,
     "noUnusedLocals": false /* Report errors on unused locals. */,
@@ -19,19 +17,9 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "outDir": "./dist/tsc/",
-    "types": [
-      "node"
-    ],
-    "lib": [
-      "ES6",
-      "DOM"
-    ]
+    "types": ["node"],
+    "lib": ["ES6", "DOM"]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.test.ts"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.test.ts"]
 }
