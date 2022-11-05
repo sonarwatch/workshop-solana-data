@@ -6,10 +6,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">A Solana Workshop</h3>
+<h3 align="center">A Deep Dive Into Solana's Data Structure</h3>
 
   <p align="center">
-    How to recover data directly from the blockchain
+    How to recover data from the blockchain
     <br />
     <br />
   </p>
