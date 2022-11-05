@@ -40,7 +40,7 @@ The goal of this workshop is to discover through some examples how the data on t
 
 ## How does it work?
 
-[Slides link](https://slides.com/olivbau/deck/fullscreen)
+[Slides link](https://slides.com/olivbau/workshop-solana-data/fullscreen)
 
 ## Practice Time
 
