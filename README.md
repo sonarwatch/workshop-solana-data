@@ -6,7 +6,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">A Solana Workshop - HH Paris</h3>
+<h3 align="center">A Solana Workshop</h3>
 
   <p align="center">
     How to recover data directly from the blockchain
